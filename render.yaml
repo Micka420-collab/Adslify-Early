@@ -1,0 +1,12 @@
+services:
+  - type: static
+    name: adslify-community
+    runtime: static
+    buildCommand: null
+    staticPublishPath: ./public
+    pullRequestPreviewsEnabled: true
+    autoDeploy: true
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
