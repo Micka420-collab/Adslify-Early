@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adslify — Early Access Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Geist+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Adslify<span class="logo-accent">.</span></div>
+    <div class="nav-center">
+      <a href="#plans" class="nav-link">Offres</a>
+      <a href="#transparency" class="nav-link">Transparence</a>
+      <a href="#roadmap" class="nav-link">Roadmap</a>
+    </div>
+    <button class="nav-btn" onclick="openModal('Explorer', 79, '6 mois avant lancement')">Rejoindre — 79€</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="hero-kicker">
+        <div class="kicker-dot"></div> Early Access ouvert · Lancement Q3 2026
+      </div>
+      <h1>Le premier vrai<br><em>OS</em> pour les<br>créatifs.</h1>
+      <p class="hero-p">Fini de jongler entre Drive, Notion et vos Ads. Adslify est le premier <strong>OS Web immersif</strong> pour votre écosystème marketing. Nous avons pris la puissance du modèle Claude 3.5 et avons développé <em>notre propre cerveau</em> et nos propres outils, pensés exclusivement pour les attentes des E-commerçants. Une pure merveille tout-en-un.</p>
+      <div class="hero-actions">
+        <button class="btn-fill" onclick="openModal('Explorer', 79, '6 mois avant lancement')">Early Access —
+          79€</button>
+        <button class="btn-outline" onclick="document.getElementById('plans').scrollIntoView({behavior:'smooth'})">Voir
+          les offres</button>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item"><strong>€15k</strong> objectif community</div>
+        <div class="meta-sep"></div>
+        <div class="meta-item"><strong>6 mois</strong> accès anticipé</div>
+        <div class="meta-sep"></div>
+        <div class="meta-item"><strong>0%</strong> d'équity (rewards uniquement)</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="hero-card">
+        <div class="hc-tag">Early Access Community</div>
+        <div class="hc-price"><sup>€</sup>79</div>
+        <div class="hc-plan">Accès 6 mois avant le lancement public</div>
+        <div class="hc-sep"></div>
+        <ul class="hc-perks">
+          <li>Adslify OS complet (bêta)</li>
+          <li>Gestionnaire de fichiers natif</li>
+          <li>50GB stockage Cloudflare R2</li>
+          <li>Apps Dashboard + Créatifs</li>
+          <li>Badge Community Early</li>
+          <li>Support prioritaire Discord</li>
+        </ul>
+        <button class="hc-btn" onclick="openModal('Explorer', 79, '6 mois avant lancement')">Rejoindre maintenant
+          →</button>
+        <div class="hc-note">🔒 Paiement sécurisé · Stripe · Annulable avant lancement</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-track">
+      <div class="ticker-item">Adslify OS <span>→</span> OS web natif avec filesystem</div>
+      <div class="ticker-item">Stockage <span>→</span> Cloudflare R2 — 10x moins cher qu'AWS</div>
+      <div class="ticker-item">IA intégrée <span>→</span> Création média via IA Google et voix ElevenLabs</div>
+      <div class="ticker-item">Community <span>→</span> Objectif €15k · 0% equity</div>
+      <div class="ticker-item">Lancement <span>→</span> Q3 2026 — Beta Juin 2026</div>
+      <div class="ticker-item">Adslify OS <span>→</span> OS web natif avec filesystem</div>
+      <div class="ticker-item">Stockage <span>→</span> Cloudflare R2 — 10x moins cher qu'AWS</div>
+      <div class="ticker-item">IA intégrée <span>→</span> Création média via IA Google et voix ElevenLabs</div>
+      <div class="ticker-item">Community <span>→</span> Objectif €15k · 0% equity</div>
+      <div class="ticker-item">Lancement <span>→</span> Q3 2026 — Beta Juin 2026</div>
+    </div>
+  </div>
+
+  <!-- FUNDING PROGRESS -->
+  <div class="wrap" id="funding">
+    <div class="eyebrow">Financement Community</div>
+    <h2>Objectif réaliste,<br>transparence totale.</h2>
+    <p class="desc">Cette levée community couvre les coûts de développement des 6 premiers mois. Pas d'équity ici —
+      juste des rewards et un accès anticipé.</p>
+
+    <div class="funding-block">
+      <div class="funding-header">
+        <div>
+          <div class="funding-raised">0<span>/€15k</span></div>
+          <div class="funding-goal-text">levés · 0 contributeurs · objectif community</div>
+        </div>
+        <div class="funding-pct">
+          <div class="pct-num">0%</div>
+          <div class="pct-label">financé</div>
+        </div>
+      </div>
+      <div class="bar-track">
+        <div class="bar-fill" id="barFill"></div>
+      </div>
+      <div class="bar-labels">
+        <span>0€</span>
+        <span>€7.5k — 50%</span>
+        <span>€15k</span>
+      </div>
+
+      <div class="funding-info">
+        <div class="fi-item">
+          <h4>💻 Développement</h4>
+          <p>Infra VPS, APIs IA (IA Adslify développée pour l'e-commerce, basée sur Claude), stockage R2, monitoring —
+            €200/mois</p>
+        </div>
+        <div class="fi-item">
+          <h4>🎁 Pour les contributeurs</h4>
+          <p>Accès 6-12 mois anticipé, badges exclusifs, roadmap privée</p>
+        </div>
+        <div class="fi-item">
+          <h4>🚀 Prochaine étape</h4>
+          <p>Levée investisseurs €50-100k après validation produit</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PREVIEW SECTION -->
+  <div class="wrap" id="preview" style="padding-top:0">
+    <div class="eyebrow">Aperçu exclusif</div>
+    <h2>Déjà en cours<br>de développement.</h2>
+    <p class="desc">Voici les premières interfaces d'Adslify OS. En attendant l'accès anticipé, nous construisons le futur espace des créatifs en totale transparence.</p>
+    
+    <div class="preview-grid">
+      <div class="preview-card">
+        <img src="Adslify-1.PNG" alt="Site Web Adslify" class="preview-img">
+        <div class="preview-caption">Site Web Adslify</div>
+      </div>
+      <div class="preview-card">
+        <img src="OS-Adslify-1.PNG" alt="Adslify OS Aperçu 1" class="preview-img">
+        <div class="preview-caption">Adslify OS — Fichiers</div>
+      </div>
+      <div class="preview-card">
+        <img src="OS-Adslify-2.PNG" alt="Adslify OS Aperçu 2" class="preview-img">
+        <div class="preview-caption">Adslify OS — Applications</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ECOSYSTÈME ADSLIFY -->
+  <div class="wrap" id="ecosystem" style="padding-top:0">
+    <div class="eyebrow">Architecture Globale</div>
+    <h2>Un OS immersif propulsé<br>par l'Intelligence Artificielle.</h2>
+    <p class="desc">Adslify = Un système d'exploitation web professionnel qui combine la puissance de Claude 3.5 Sonnet avec les outils marketing essentiels.</p>
+
+    <!-- 1. OS & Apps & AI -->
+    <div class="feature-grid three-col">
+      <div class="feature-card">
+        <div class="fc-icon">🖥️</div>
+        <h3>OS Immersif</h3>
+        <p>Bureau virtuel interactif avec icônes drag & drop, gestion multifenêtre, et workspaces professionnels isolés.</p>
+        <ul class="fc-list">
+          <li>Bureau personnalisable</li>
+          <li>Taskbar OS intégrée</li>
+          <li>Gestion des workflows multiples</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">⚡</div>
+        <h3>Apps Intégrées</h3>
+        <p>Tous vos outils marketing centralisés sans payer des dizaines d'abonnements.</p>
+        <ul class="fc-list">
+          <li><strong>Campaign Manager:</strong> Meta & TikTok Ads</li>
+          <li><strong>Creative Studio:</strong> Visuels via IA</li>
+          <li><strong>CRM & Analytics:</strong> Clients et rapports</li>
+        </ul>
+      </div>
+      <div class="feature-card focus">
+        <div class="fc-icon">🧠</div>
+        <h3>Le Cerveau Adslify AI</h3>
+        <p>Plus qu'un simple pont vers l'IA. Nous avons construit nos propres outils sur-mesure (sur la base Claude 3.5) pour répondre parfaitement aux E-commerçants.</p>
+        <ul class="fc-list">
+          <li>Cerveau et Skills E-commerce exclusifs</li>
+          <li>Prompts e-com auto-optimisés</li>
+          <li>Isolation et apprentissage RGPD</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2. Target Audiences -->
+    <div class="audience-grid" style="margin-top: 80px;">
+      <h3 class="ag-title">Conçu pour votre workflow :</h3>
+      <div class="ag-wrapper">
+        <div class="ag-item">
+          <h4>🛒 Pour E-commerçants</h4>
+          <p>Import auto Shopify/Woo, Création Meta Ads 1-clic, Scripts IA orienté conversion.</p>
+        </div>
+        <div class="ag-item">
+          <h4>🏢 Pour Agences</h4>
+          <p>Multi-clients (workspaces RLS isolés), Espaces collaboratifs, Rapports KPIs auto.</p>
+        </div>
+        <div class="ag-item">
+          <h4>📸 Pour Créateurs</h4>
+          <p>Générateur de hooks viraux (TikTok/Reels), suggestions visuelles, A/B Testing automatisé.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Tech Stack & Security -->
+    <div class="tech-stack-bar" style="margin-top: 80px;">
+      <div class="ts-info">
+        <h3>Architecture & Sécurité Enterprise</h3>
+        <p>Construit sur la stack technologique moderne pour garantir isolation (RLS Supabase), vitesse, et audit permanent des consentements IA.</p>
+      </div>
+      <div class="ts-badges">
+        <span class="badgio">Next.js 14 + TS</span>
+        <span class="badgio">Supabase DB Auth</span>
+        <span class="badgio">Claude 3.5 API</span>
+        <span class="badgio">Framer Motion / Zustand</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANS -->
+  <div class="wrap" id="plans" style="padding-top:0">
+    <div class="eyebrow">Offres Early Access</div>
+    <h2>Rejoins la communauté<br>de lancement.</h2>
+    <p class="desc">Chaque plan te donne un accès anticipé + des rewards exclusifs. Tu finances le développement, tu
+      accèdes en premier.</p>
+
+    <div class="plans">
+      <!-- EXPLORER -->
+      <div class="plan">
+        <div class="plan-label">Explorer</div>
+        <div class="plan-price">79€</div>
+        <div class="plan-access">
+          <span class="pa-badge pa-time">6 mois d'accès</span>
+          <span class="pa-badge pa-credits">100 crédits inclus</span>
+        </div>
+        <div class="plan-sub">Accès bêta + rewards community</div>
+        <ul class="plan-perks">
+          <li>Adslify OS complet (bêta)</li>
+          <li>Gestionnaire de fichiers natif</li>
+          <li>50GB stockage R2 inclus</li>
+          <li>Apps Dashboard + Créatifs</li>
+          <li>Badge "Explorer" permanent</li>
+          <li>Accès Discord privé</li>
+          <li>Vote sur les fonctionnalités</li>
+        </ul>
+        <button class="plan-btn plan-btn-dark" onclick="openModal('Explorer', 79, '6 mois avant lancement')">Rejoindre —
+          79€</button>
+      </div>
+
+      <!-- PIONEER (featured) -->
+      <div class="plan hot">
+        <div class="plan-hot-badge">🔥 Le plus populaire</div>
+        <div class="plan-label">Pioneer</div>
+        <div class="plan-price">149€</div>
+        <div class="plan-access">
+          <span class="pa-badge pa-time">9 mois d'accès</span>
+          <span class="pa-badge pa-credits">400 crédits inclus</span>
+        </div>
+        <div class="plan-sub">Plus de stockage + rewards premium</div>
+        <ul class="plan-perks">
+          <li>Tout Explorer inclus</li>
+          <li>200GB stockage R2 inclus</li>
+          <li>9 mois avant le lancement</li>
+          <li>Badge "Pioneer" or</li>
+          <li>Roadmap privée + updates hebdo</li>
+          <li>Call groupe avec le fondateur</li>
+          <li>Réduction 25% sur plans futurs</li>
+          <li>Mention dans les crédits</li>
+        </ul>
+        <button class="plan-btn plan-btn-orange" onclick="openModal('Pioneer', 149, '9 mois avant lancement')">Rejoindre
+          — 149€</button>
+      </div>
+
+      <!-- BUILDER -->
+      <div class="plan">
+        <div class="plan-label">Builder</div>
+        <div class="plan-price">299€</div>
+        <div class="plan-access">
+          <span class="pa-badge pa-time">12 mois d'accès</span>
+          <span class="pa-badge pa-credits">1 500 crédits inclus</span>
+        </div>
+        <div class="plan-sub">Le package complet pour builders</div>
+        <ul class="plan-perks">
+          <li>Tout Pioneer inclus</li>
+          <li>500GB stockage R2 inclus</li>
+          <li>12 mois avant le lancement</li>
+          <li>Accès API privé (rate limit x5)</li>
+          <li>Call 1:1 avec le fondateur (30min)</li>
+          <li>Accès au code source (select)</li>
+          <li>Réduction 40% à vie</li>
+          <li>Co-branding possible</li>
+        </ul>
+        <button class="plan-btn plan-btn-outline"
+          onclick="openModal('Builder', 299, '12 mois avant lancement')">Rejoindre — 299€</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRANSPARENCY -->
+  <div class="wrap" id="transparency">
+    <div class="eyebrow">Transparence</div>
+    <h2>Où va ton argent ?<br>Tout est public.</h2>
+    <p class="desc">Pas de promesses floues. Voici exactement comment ton investissement sera utilisé pour construire
+      Adslify.</p>
+
+    <div class="transparency-grid">
+      <div class="trans-card">
+        <h3>💰 Budget mensuel estimé</h3>
+        <ul>
+          <li>Infrastructure VPS <span class="cost">€50</span></li>
+          <li>Stockage Cloudflare R2 <span class="cost">€20-100</span></li>
+          <li>APIs IA (Modèles Google + ElevenLabs) <span class="cost">€50-200</span></li>
+          <li>Email / Auth / Monitoring <span class="cost">€30</span></li>
+          <li>Outils dev (GitHub, etc.) <span class="cost">€50</span></li>
+          <li style="border-top: 2px solid var(--border); margin-top: 8px; padding-top: 12px;"><strong>Total
+              /mois</strong> <span class="cost">€200-430</span></li>
+        </ul>
+      </div>
+      <div class="trans-card">
+        <h3>📊 Répartition levée €15k</h3>
+        <ul>
+          <li>Dev Mois 1-3 (MVP) <span class="cost">€1,200</span></li>
+          <li>Dev Mois 4-6 (Beta) <span class="cost">€1,500</span></li>
+          <li>APIs & Infrastructure <span class="cost">€1,500</span></li>
+          <li>Design & Assets <span class="cost">€500</span></li>
+          <li>Buffer imprévus <span class="cost">€1,500</span></li>
+          <li style="border-top: 2px solid var(--border); margin-top: 8px; padding-top: 12px;"><strong>Reste pour
+              scale</strong> <span class="cost">€8,800+</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROADMAP -->
+  <div class="wrap" id="roadmap" style="padding-top:0">
+    <div class="eyebrow">Feuille de route</div>
+    <h2>De l'early access<br>au lancement public.</h2>
+    <p class="desc">6 mois de développement transparent. Chaque contributeur suit l'avancement en temps réel.</p>
+
+    <div class="roadmap">
+      <div class="rm-item">
+        <div class="rm-phase active">→ Avril-Mai 2026</div>
+        <div>
+          <div class="rm-title">MVP Core — Filesystem + Auth</div>
+          <div class="rm-desc">Système de fichiers natif, authentification, stockage R2, interface OS de base. Déjà 30%
+            complet.</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-phase upcoming">Juin 2026</div>
+        <div>
+          <div class="rm-title">Bêta fermée — Early Access</div>
+          <div class="rm-desc">Ouverture aux contributeurs Explorer/Pioneer/Builder. Tests, feedback, itérations
+            rapides.</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-phase upcoming">Juillet-Août 2026</div>
+        <div>
+          <div class="rm-title">Apps intégrées + IA</div>
+          <div class="rm-desc">Dashboard Analytics, app Créatifs avec IA Google & ElevenLabs, gestion des médias,
+            workspace collaboratif.</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-phase upcoming">Septembre 2026</div>
+        <div>
+          <div class="rm-title">Lancement public + Levée Sérieuse</div>
+          <div class="rm-desc">Ouverture au grand public (plans €79-999/mois). Levée €50-100k auprès d'investisseurs
+            pour
+            scaler.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Adslify<span>.</span></div>
+    <div class="footer-note">© 2025 Adslify · Community Round · Pas d'équity, juste des rewards</div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="overlay" id="overlay" onclick="overlayClick(event)">
+    <div class="modal">
+      <button class="modal-x" onclick="closeModal()">✕</button>
+      
+      <div id="mContent">
+        <div class="modal-kicker">Early Access Community</div>
+        <h3 id="mTitle">Rejoindre Adslify</h3>
+        <p class="modal-sub" id="mSub">Tu rejoins la communauté de lancement Adslify. Accès anticipé + rewards exclusifs.</p>
+
+        <div class="field">
+          <label>Prénom & Nom</label>
+          <input type="text" id="mName" placeholder="Jean Dupont">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="mEmail" placeholder="jean@email.com">
+        </div>
+
+        <div id="mError" class="modal-error">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          Merci de remplir ton nom et email.
+        </div>
+
+        <div class="modal-summary">
+          <div class="ms-left">
+            <div class="ms-plan" id="mPlan">Explorer</div>
+            <div class="ms-access" id="mAccess">6 mois avant lancement</div>
+          </div>
+          <div class="ms-price" id="mPrice">79€</div>
+        </div>
+
+        <button class="modal-btn" id="btnPay" onclick="pay()">Payer via Stripe →</button>
+        <div class="secure-note">🔒 SSL 256 bits · Paiement sécurisé · Annulable avant lancement</div>
+      </div>
+      
+      <div id="mSuccessPane" class="modal-success-pane" style="display:none;">
+        <div class="ms-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3>Validation en cours</h3>
+        <p>Génération de ton lien de paiement sécurisé pour le plan <strong id="mSuccessPlanName"></strong> (<strong id="mSuccessAmount"></strong>).</p>
+        <div class="mss-note">En production, Stripe Checkout s'ouvrira automatiquement pour activer le paiement réel.</div>
+        <button class="modal-btn-outline" onclick="closeModal()">Fermer cet aperçu</button>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="./js/app.js"></script>
+
+</body>
+
+</html>
