@@ -1,12 +1,22 @@
 services:
-  - type: static
+  - type: web
     name: adslify-community
-    runtime: static
-    buildCommand: null
-    staticPublishPath: ./public
-    pullRequestPreviewsEnabled: true
-    autoDeploy: true
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    rootDir: ./
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: STRIPE_PRICE_EXPLORER
+        sync: false
+      - key: STRIPE_PRICE_PIONEER
+        sync: false
+      - key: STRIPE_PRICE_BUILDER
+        sync: false
