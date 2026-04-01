@@ -66,28 +66,31 @@
       btn.style.opacity = '0.9';
       btn.style.pointerEvents = 'none';
 
-      // Option B : Firebase Hosting (Statique) - Redirection vers Stripe Payment Links
-      const stripeLinks = {
-        'Explorer': 'https://buy.stripe.com/test_remplacez_ceci_explorer',
-        'Pioneer': 'https://buy.stripe.com/test_remplacez_ceci_pioneer',
-        'Builder': 'https://buy.stripe.com/test_remplacez_ceci_builder'
-      };
-
-      const paymentUrl = stripeLinks[currentPlan];
-
-      if (!paymentUrl) {
-        alert("Lien de paiement non configuré.");
+      // Option A : Serveur Node.js / Render (Dynamique) - Appel vers l'API Checkout
+      try {
+        const response = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ plan: currentPlan, email: email })
+        });
+        
+        const data = await response.json();
+        
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert('Erreur: ' + (data.error || 'Impossible de créer la session Stripe.'));
+          btn.innerHTML = 'Payer via Stripe →';
+          btn.style.opacity = '1';
+          btn.style.pointerEvents = 'auto';
+        }
+      } catch (err) {
+        console.error('Erreur de paiement:', err);
+        alert('Erreur de connexion au serveur pour le paiement.');
         btn.innerHTML = 'Payer via Stripe →';
         btn.style.opacity = '1';
         btn.style.pointerEvents = 'auto';
-        return;
       }
-
-      // On simule un léger chargement pour l'UX puis on redirige vers Stripe
-      // L'email saisi est pré-rempli sur la page Stripe Checkout via ?prefilled_email=
-      setTimeout(() => {
-        window.location.href = `${paymentUrl}?prefilled_email=${encodeURIComponent(email)}`;
-      }, 600);
     }
 
     // Animate bar on scroll
